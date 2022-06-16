@@ -1,0 +1,30 @@
+version: "2"
+services:
+  testmysql:
+    image: mysql:8
+    container_name: "testmysql"
+    networks:
+      - django
+    volumes:
+      - "$PWD/mysql:/home/mysql"
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    ports:
+      - 3306:3306
+
+  django-test:
+    image: ubuntu
+    container_name: "django-test"
+    networks:
+      - django
+    volumes:
+      - "$PWD/django:/home/django"
+    ports:
+      - 8000:8000
+    entrypoint:
+      - "/home/django/entrypoint.sh"
+
+
+networks:
+    django:
+
