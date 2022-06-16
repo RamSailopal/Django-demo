@@ -24,6 +24,18 @@ services:
     entrypoint:
       - "/home/django/entrypoint.sh"
 
+  django-front:
+    image: ubuntu
+    container_name: "django-front"
+    networks:
+      - django
+    volumes:
+      - "$PWD/django-front:/home/django"
+    ports:
+      - 8001:8001
+    entrypoint:
+      - "/home/django/entrypoint.sh"
+
 
 networks:
     django:
