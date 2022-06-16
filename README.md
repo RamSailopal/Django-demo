@@ -25,3 +25,28 @@ On completion of the provisioning of the environment, navigate to http://servera
      |  2 | Bob  | 52  | M   |
      +----+------+-----+-----+
      2 rows in set (0.00 sec)
+     
+# Creating a new project
+
+To create a new project, run:
+
+     django-admin startproject newproject
+     cd newproject
+     django-admin startapp new_api
+
+The critical files are then:
+
+**newproject_api/models.py** - Used to set up mysql  tables using migrations
+
+**newproject_api/Serializers.py** - Converts table data into a JSON API format
+
+**newproject_api/views.py** - Allows data to be viewed in a browser
+
+**newproject_api/urls.py** - Connects endpoints to views
+
+**newproject/urls.py** - Redirects the main project to the apis
+
+**newproject/settings.py** - Which backend database to use, allowed hosts installed apps
+
+
+
