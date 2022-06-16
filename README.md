@@ -12,6 +12,8 @@ Tables are created in mysql using the Django migrations framework https://docs.d
     cd Django-demo
     docker-compose up
     
+# Backend
+    
     
 On completion of the provisioning of the environment, navigate to http://serveraddress:8000/test/users to GET and POST data
 
@@ -48,5 +50,11 @@ The critical files are then:
 
 **newproject/settings.py** - Which backend database to use, allowed hosts installed apps
 
+# Front-end
 
+A crude front-end to demonstate the use of Jinja templates has been added.
+
+To view the front-end, navigate to:
+
+http://serveraddress:8001
 
