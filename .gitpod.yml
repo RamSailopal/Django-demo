@@ -3,4 +3,4 @@ tasks:
     init: |
       echo 'TODO: build project'
     command: |
-      echo "CSRF_TRUSTED_ORIGINS = ['${GITPOD_WORKSPACE_URL}']" >> django-front/newproject/newproject/settings.py && docker-compose up 
+       echo "CSRF_TRUSTED_ORIGINS = ['https://8001-${GITPOD_WORKSPACE_URL##https://}']" >> django-front/newproject/newproject/settings.py && docker-compose up 
