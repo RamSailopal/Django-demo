@@ -1,6 +1,7 @@
 <html>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <head>
+<meta http-equiv="Refresh" content="5; url='/'" />
 <meta content="en-gb" http-equiv="Content-Language" />
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <link rel="icon" href="http://192.168.240.28/syracuse-ui/themes/desktop/images/site/favicon.ico" />
@@ -69,38 +70,9 @@ div {
 </div>
 <div>
 {% block content %}
-        {% csrf_token %}
-        <h1>Info for User - 
-        {% if user.id == null %}
-          {{ "Not Found" }}
-        {% else %}
-          {{ user.id }}
-        {% endif %}
-        <table>
-	<tr><th>Name:</th><td>
-        {% if user.name == null %}
-          {{ "Not Found" }}
-        {% else %}
-          {{ user.name }}
-        {% endif %}
-	</td></tr>
-        <tr><th>Age</th><td>
-        {% if user.age == null %}
-          {{ "Not Found" }}
-        {% else %}
-          {{ user.age }}
-        {% endif %}
-        </td></tr>
-        <tr><th>Sex</th><td>
-        {% if user.sex == null %}
-          {{ "Not Found" }}
-        {% else %}
-          {{ user.sex }}
-        {% endif %}
-        </td></tr>
+        <p>User with ID - {{ id }} already exists</p>
         </table>
 {% endblock %}
 </div>
-<input type="button" value="Delete" onClick='location.href="/deluser/{{ user.id }}"'/
 </body>
 </html>

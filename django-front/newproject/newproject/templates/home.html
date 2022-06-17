@@ -72,12 +72,14 @@ div {
 <tr><th>ID</th><th>Name</th><th>Age</th><th>Sex</th></tr>
 {% block content %}
 	{% for user in users %}
-	<tr><td>{{ user.id }}</td><td>{{ user.name }}</td><td>{{ user.age }}</td><td>{{ user.sex }}</td></tr>
+	<tr onClick='location.href="/user/{{ user.id }}"'><td>{{ user.id }}</td><td>{{ user.name }}</td><td>{{ user.age }}</td><td>{{ user.sex }}</td></tr>
         {% endfor %}
 {% endblock %}
 </table>
 </div>
-<input type="button" value="Refresh" onClick='location.href="/";'/>
+<table>
+<tr><td><input style="width:100%;" type="button" value="Refresh" onClick='location.href="/";'/></td><td><input style="width:100%;" type="button" value="Add User" onClick='location.href="/newuser";'/></td></td></tr>
+</table>
 
 </body>
 </html>

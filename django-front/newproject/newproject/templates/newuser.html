@@ -69,38 +69,20 @@ div {
 </div>
 <div>
 {% block content %}
-        {% csrf_token %}
-        <h1>Info for User - 
-        {% if user.id == null %}
-          {{ "Not Found" }}
-        {% else %}
-          {{ user.id }}
-        {% endif %}
-        <table>
-	<tr><th>Name:</th><td>
-        {% if user.name == null %}
-          {{ "Not Found" }}
-        {% else %}
-          {{ user.name }}
-        {% endif %}
-	</td></tr>
-        <tr><th>Age</th><td>
-        {% if user.age == null %}
-          {{ "Not Found" }}
-        {% else %}
-          {{ user.age }}
-        {% endif %}
-        </td></tr>
-        <tr><th>Sex</th><td>
-        {% if user.sex == null %}
-          {{ "Not Found" }}
-        {% else %}
-          {{ user.sex }}
-        {% endif %}
-        </td></tr>
-        </table>
+   <form action = "" method = "POST">
+	{% csrf_token %}
+        <label for="name">ID: </label>
+        <input id="name" type="text" name="id">
+	<label for="name">Name: </label>
+	<input id="name" type="text" name="name">
+        <label for="age">Age: </label>
+        <input id="age" type="text" name="age">
+        <label for="sex">Sex: </label>
+        <input id="sex" type="text" name="sex">
+	<input type="submit" value="OK">
+   </form>
+
 {% endblock %}
 </div>
-<input type="button" value="Delete" onClick='location.href="/deluser/{{ user.id }}"'/
 </body>
 </html>
