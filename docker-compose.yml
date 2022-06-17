@@ -13,7 +13,7 @@ services:
       - 3306:3306
 
   django-test:
-    image: ubuntu
+    image: ubuntu:focal
     container_name: "django-test"
     networks:
       - django
@@ -25,7 +25,7 @@ services:
       - "/home/django/entrypoint.sh"
 
   django-front:
-    image: ubuntu
+    image: ubuntu:focal
     container_name: "django-front"
     networks:
       - django
