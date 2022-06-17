@@ -54,7 +54,7 @@ The critical files are then:
 
 # Front-end
 
-A crude front-end to demonstate the use of Jinja templates has been added.
+A crude front-end to demonstate the use of Jinja templates and database "CRUD" has been added.
 
 To view the front-end, navigate to:
 
